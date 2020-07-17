@@ -19,45 +19,56 @@
 require_relative "./cartas.rb"
 
 class Baraja
-  attr_reader :cartas
+
+  attr_accessor :cartas, :repartir_mano
 
   def initialize 
 
-    c = ["C", "D", "E", "T"] 
-    num=[1,2,3,4,5,6,7,8,9,10,11,12,13] 
-    
-    @cartas=[] 
-    13.times do |i|
+    c              =["C", "D", "E", "T"] 
+    num            =[1,2,3,4,5,6,7,8,9,10,11,12,13] 
+    @cartas        =[]
 
+    13.times do |i|
+  
       4.times do |j| 
 
         @cartas << Card.new(num[i], c[j])
-
+        #puts "#{num} #{c}"
+        
       end
 
     end
 
   end
   
-  def sacar
-
-    @cartas.pop
-
-  end
-
   def barajar
 
     @cartas.shuffle
 
   end
-    
+
+  def sacar
+
+    @cartas.pop(5) << @repartir_mano
+
+  end
+  
+  
+  def repartir_mano
+
+    @repartir_mano=[]
+    puts "#{@repartir_mano}"
+
+  end
+
 end
 
 baraja1=Baraja.new
 baraja1.barajar
 baraja1.sacar
-
-puts "IMPRIMIENDO BARAJAR" 
-puts baraja1.barajar 
-puts "IMPRIMIENDO SACAR" 
-puts baraja1.sacar 
+baraja1.repartir_mano
+puts baraja1.repartir_mano
+# puts "IMPRIMIENDO BARAJAR" 
+# puts baraja1.barajar 
+# puts "IMPRIMIENDO SACAR" 
+# puts baraja1.sacar
