@@ -2,8 +2,7 @@
 # Dado el siguiente código UML
 # 1. Crear la clase con el nombre CuentaBancaria (1punto)
 # Los métodos getter y setter para el atributo nombre_de_usuario (1punto)
-# Crear el constructor que reciba el nombre_usuario y numero_de_cuenta y lo asigne a los
-# atributos(1punto)
+# Crear el constructor que reciba el nombre_usuario y numero_de_cuenta y lo asigne a los atributos(1punto)
 # Levantar una excepción del tipo RangeError si el atributo numero_de_cuenta tiene un número
 # de dígitos distinto a 8 (se puede ocupar el método .digits para obtener los dígitos y .count para
 # contarlos) (1punto)
@@ -15,7 +14,15 @@
 
 class CuentaBancaria
 
-  attr_accessor :name_user, :number_account, :vip
+  attr_accessor :name_user
+
+  def number_account
+    @number_account
+  end
+
+  def vip
+    @vip
+  end
 
   def initialize(name_user, number_account, vip=0)
 
@@ -31,15 +38,15 @@ class CuentaBancaria
 
   end
 
-  def number_The_account
+  def numberTheaccount
 
     if vip !=0
 
-      puts "1-#{number_account}"
+      puts "1-#{@number_account}"
 
     else
 
-      puts "0-#{number_account}"
+      puts "0-#{@number_account}"
 
     end
 
@@ -48,4 +55,4 @@ class CuentaBancaria
 end
 
 cuenta=CuentaBancaria.new("Antonella Paredes", 12345678, 1)
-cuenta.number_The_account
+cuenta.numberTheaccount

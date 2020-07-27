@@ -20,7 +20,7 @@ class Card
 
     def to_s
 
-        puts "number:#{number} | pint:#{pint}"
+        puts "number:#{@number} | pint:#{@pint}"
 
     end 
 
