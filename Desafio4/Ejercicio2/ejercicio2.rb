@@ -71,23 +71,21 @@ class Animal #Clase Padre
 
   end
 
-end
-
-# Crear la clase Ave.
-class Ave < Animal #Clase hija, porque, hereda de Animal.
+  def initialize(name)
+    @name
+  end
 
   include Habilidades
   include Alimentacion
 
 end
 
+# Crear la clase Ave.
+class Ave < Animal #Clase hija, porque, hereda de Animal.
+end
+
 # Crear la clase Mamifero.
 class Mamifero < Animal #Clase hijo, porque, hereda de Animal.
-
-  include Habilidades::Caminante
-  include Alimentacion::Herbivoro
-  include Alimentacion::Carnivoro
-
 end
 
 # Crear la clase Insecto.
